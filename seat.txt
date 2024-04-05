@@ -1,3 +1,8 @@
+说明{'id': 座位id填入book.py中的seat_id, 
+    'name':座位上显示的座位号, 'type': 'seat', 'status': 'FREE',
+    'window':是否靠窗,
+    'power': 是否有电源, 'computer': False, 'local': False, 'enabled': True, 'direction': 0}
+
 一层西区
 {'id': 14, 'name': '080', 'type': 'seat', 'status': 'FREE', 'window': True, 'power': False, 'computer': False, 'local': False, 'enabled': True, 'direction': 0}
 {'id': 15, 'name': '078', 'type': 'seat', 'status': 'FREE', 'window': False, 'power': False, 'computer': False, 'local': False, 'enabled': True, 'direction': 0}

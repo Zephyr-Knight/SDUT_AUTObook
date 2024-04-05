@@ -1,4 +1,4 @@
-# SCKEYSDUT-AutoBook 山东理工大学图书馆自动预约脚本
+# SDUT-AutoBook 山东理工大学图书馆自动预约脚本
 ### 2024/4/5  
 
  - 请合理使用此脚本，<big> <font color=red>切勿占用公共资源</font> </big>， 做出诸如预约但不去签到使用的行为。

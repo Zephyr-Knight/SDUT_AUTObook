@@ -27,17 +27,10 @@ def serverJ( content: str) -> None:
         return
     print("serverJ 服务启动")
 
-    data = {"text": "图书馆预约消息", "desp": content.replace("\n", "\n\n")}
-    if push_config.get("PUSH_KEY").find("SCT") != -1:
-        url = f'https://sctapi.ftqq.com/{push_config.get("PUSH_KEY")}.send'
-    else:
-        url = f'https://sc.ftqq.com/{push_config.get("PUSH_KEY")}.send'
+    data = {"text": "图书馆预约通知", "channel":9,"desp": content}
+    url = f'https://sc.ftqq.com/{SCKEY}.send'
     response = requests.post(url, data=data).json()
-
-    if response.get("errno") == 0 or response.get("code") == 0:
-        print("serverJ 推送成功！")
-    else:
-        print(f'serverJ 推送失败！错误码：{response["message"]}')
+    print(f'serverJ 推送状态：{response}')
 
 def bark(content: str) -> None:
     """

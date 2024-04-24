@@ -13,8 +13,8 @@
 ### main.py 中
    | 变量名| 说明        | 用途                                              |
    |:----------|:------------------------------------------------|:--------------|
-   | `std_ID` | 学号      | 用于登录[SDUT图书馆](http://222.206.65.16/libseat/#/login) |
-   | `PASSWORD` | SDUT图书馆密码 | 用于登录[SDUT图书馆](http://222.206.65.16/libseat/#/login) |
+   | `std_ID` | 学号      | 用于登录[SDUT图书馆](http://libsr.sdut.cn/libseat/#/login) |
+   | `PASSWORD` | SDUT图书馆密码 | 用于登录[SDUT图书馆](http://libsr.sdut.cn/libseat/#/login) |
    | `SCKEY`（选填） | 微信推送服务    | 详见 [Sever酱](https://sct.ftqq.com/) 配置微信推送打卡结果   |
    | `BARK_PUSH`（选填） | bark推送服务    | 详见 [bark](https://bark.day.app/#/?id=bark) 配置推送打卡结果   |
 

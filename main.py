@@ -90,7 +90,7 @@ def  cancel_booking(token):
         print('没有可取消的预定')
         return
     id =  reserved_data[0]['id']
-    url = f'https://libsr.sdut.edu.cn/sdutseat/rest/v2/cancel/{id}?id={id}&token={token}'
+    url = f'https://libsr.sdut.edu.cn/rest/v2/cancel/{id}?id={id}&token={token}'
     response = requests.get(url)
     if response.json()['status'] == 'success':
         print('取消成功')
@@ -99,7 +99,7 @@ def  cancel_booking(token):
 
 # 验证token是否有效
 def is_token_valid(token):
-    url = f'https://libsr.sdut.edu.cn/sdutseat/rest/v2/user?token={token}'
+    url = f'https://libsr.sdut.edu.cn/rest/v2/user?token={token}'
     response = requests.get(url).json()
     if response['status'] == 'success':
         print('Token有效')
@@ -123,7 +123,7 @@ def get_token(std_id, password):
 def book_seat(seat_id, start_time, end_time) -> None:
     token = get_token(std_ID,password)
     date =  datetime.now().strftime('%Y-%m-%d')
-    url = f'https://libsr.sdut.edu.cn/sdutseat/rest/v2/freeBook?token={token}'
+    url = f'https://libsr.sdut.edu.cn/rest/v2/freeBook?token={token}'
     data = {
         'startTime': start_time,
         'endTime': end_time,

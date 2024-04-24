@@ -46,7 +46,7 @@ def bark(content: str) -> None:
 
 # 定义函数，用于获取验证码
 def get_captcha():
-    url = 'https://libsr.sdut.edu.cn/sdutseat/auth/createCaptcha'
+    url = 'https://libsr.sdut.edu.cn/auth/createCaptcha'
     response = requests.get(url)
     if response.status_code == 200:
         return response.json()
@@ -66,7 +66,7 @@ def recognize_captcha(ocr, captcha_data):
 
 #  定义登录函数,用于获取token
 def login(std_id, password, captcha_id, captcha_result):
-    url = f'https://libsr.sdut.edu.cn/sdutseat/rest/auth?username={std_id}&password={password}&answer={captcha_result}&captchaId={captcha_id}'
+    url = f'https://libsr.sdut.edu.cn/rest/auth?username={std_id}&password={password}&answer={captcha_result}&captchaId={captcha_id}'
     response = requests.post(url)
     if response.json()['status']== 'success':
         return response.json()['data']['token']
@@ -75,7 +75,7 @@ def login(std_id, password, captcha_id, captcha_result):
         return  None
 
 def book_history(token):
-    url = f'https://libsr.sdut.edu.cn/sdutseat/rest/v2/history/1/6?page=1&pageSize=6&token={token}'
+    url = f'https://libsr.sdut.edu.cn/rest/v2/history/1/6?page=1&pageSize=6&token={token}'
     response = requests.get(url)
     if response.json()['status'] == 'success':
         return response.json()['data']['reservations']

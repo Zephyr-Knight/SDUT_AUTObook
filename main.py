@@ -46,7 +46,7 @@ def bark(content: str) -> None:
 
 # 定义函数，用于获取验证码
 def get_captcha():
-    url = 'http://222.206.65.16/sdutseat/auth/createCaptcha'
+    url = 'http://libsr.sdut.edu.cn/sdutseat/auth/createCaptcha'
     response = requests.get(url)
     if response.status_code == 200:
         return response.json()
@@ -66,7 +66,7 @@ def recognize_captcha(ocr, captcha_data):
 
 #  定义登录函数,用于获取token
 def login(std_id, password, captcha_id, captcha_result):
-    url = f'http://222.206.65.16/sdutseat/rest/auth?username={std_id}&password={password}&answer={captcha_result}&captchaId={captcha_id}'
+    url = f'http://libsr.sdut.edu.cn/sdutseat/rest/auth?username={std_id}&password={password}&answer={captcha_result}&captchaId={captcha_id}'
     response = requests.post(url)
     if response.json()['status']== 'success':
         return response.json()['data']['token']
@@ -75,7 +75,7 @@ def login(std_id, password, captcha_id, captcha_result):
         return  None
 
 def book_history(token):
-    url = f'http://222.206.65.16/sdutseat/rest/v2/history/1/6?page=1&pageSize=6&token={token}'
+    url = f'http://libsr.sdut.edu.cn/sdutseat/rest/v2/history/1/6?page=1&pageSize=6&token={token}'
     response = requests.get(url)
     if response.json()['status'] == 'success':
         return response.json()['data']['reservations']
@@ -90,7 +90,7 @@ def  cancel_booking(token):
         print('没有可取消的预定')
         return
     id =  reserved_data[0]['id']
-    url = f'http://222.206.65.16/sdutseat/rest/v2/cancel/{id}?id={id}&token={token}'
+    url = f'http://libsr.sdut.edu.cn/sdutseat/rest/v2/cancel/{id}?id={id}&token={token}'
     response = requests.get(url)
     if response.json()['status'] == 'success':
         print('取消成功')
@@ -99,7 +99,7 @@ def  cancel_booking(token):
 
 # 验证token是否有效
 def is_token_valid(token):
-    url = f'http://222.206.65.16/sdutseat/rest/v2/user?token={token}'
+    url = f'http://libsr.sdut.edu.cn/sdutseat/rest/v2/user?token={token}'
     response = requests.get(url).json()
     if response['status'] == 'success':
         print('Token有效')
@@ -123,7 +123,7 @@ def get_token(std_id, password):
 def book_seat(seat_id, start_time, end_time) -> None:
     token = get_token(std_ID,password)
     date =  datetime.now().strftime('%Y-%m-%d')
-    url = f'http://222.206.65.16/sdutseat/rest/v2/freeBook?token={token}'
+    url = f'http://libsr.sdut.edu.cn/sdutseat/rest/v2/freeBook?token={token}'
     data = {
         'startTime': start_time,
         'endTime': end_time,

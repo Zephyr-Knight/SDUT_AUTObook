@@ -3,7 +3,8 @@
 
  - 请合理使用此脚本，<big> <font color=red>切勿占用公共资源</font> </big>， 做出诸如预约但不去签到使用的行为。
 
-
+### 2024/4/24
+- 更新域名
 
 # 使用方法
 
@@ -13,8 +14,8 @@
 ### main.py 中
    | 变量名| 说明        | 用途                                              |
    |:----------|:------------------------------------------------|:--------------|
-   | `std_ID` | 学号      | 用于登录[SDUT图书馆](http://libsr.sdut.cn/libseat/#/login) |
-   | `PASSWORD` | SDUT图书馆密码 | 用于登录[SDUT图书馆](http://libsr.sdut.cn/libseat/#/login) |
+   | `std_ID` | 学号      | 用于登录[SDUT图书馆](https://libsr.sdut.edu.cn/libseat/#/login) |
+   | `PASSWORD` | SDUT图书馆密码 | 用于登录[SDUT图书馆](https://libsr.sdut.edu.cn/libseat/#/login) |
    | `SCKEY`（选填） | 微信推送服务    | 详见 [Sever酱](https://sct.ftqq.com/) 配置微信推送打卡结果   |
    | `BARK_PUSH`（选填） | bark推送服务    | 详见 [bark](https://bark.day.app/#/?id=bark) 配置推送打卡结果   |
 
